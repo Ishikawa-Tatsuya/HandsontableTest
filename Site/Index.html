@@ -19,8 +19,7 @@
         ];
 
         var container = document.getElementById('hot');
-        var hot = new Handsontable(container,
-          {
+        var hot = $(container).handsontable({
               data: data,
               minSpareRows: 1,
               colHeaders: true,
