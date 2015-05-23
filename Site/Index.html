@@ -11,20 +11,22 @@
     <link rel="stylesheet" media="screen" href="Content/handsontable/jquery.handsontable.full.css">
     <div id="hot"></div>
     <script>
+        //フォーマットを決定
+        var container = document.getElementById('hot');
+        $(container).handsontable({
+            colHeaders: ["", "Kia", "Nissan", "Toyota", "Honda"],
+            rowHeaders: true,
+            contextMenu: true
+        });
+
+        //データは後で読みこめる
         var data = [
-          ["", "Kia", "Nissan", "Toyota", "Honda"],
           ["2008", 10, 11, 12, 13],
           ["2009", 20, 11, 14, 13],
           ["2010", 30, 15, 12, 13]
         ];
+        $(container).handsontable("loadData", data);
 
-        var container = document.getElementById('hot');
-        var hot = $(container).handsontable({
-              data: data,
-              minSpareRows: 1,
-              colHeaders: true,
-              contextMenu: true
-          });
     </script>
 </body>
 </html>
